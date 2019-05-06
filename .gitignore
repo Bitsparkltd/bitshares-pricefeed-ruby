@@ -1,0 +1,6 @@
+.ruby-gemset
+.ruby-version
+/**/.DS_Store
+docker.yml
+.env
+price-feed.peg.php.yml

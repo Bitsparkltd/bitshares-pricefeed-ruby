@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  price_feed:
+    image: ruby:2.6.2
+    entrypoint:
+      - /app/entrypoint.sh
+    command: tail -f /dev/null
+    volumes:
+      - type: bind
+        source: ./../shared/price_feed/log
+        target: /log
+      - type: bind
+        source: ./../shared/price_feed/bundle
+        target: /bundle
+      - .:/app
+    env_file:
+      - .env
+    networks:
+      - default
